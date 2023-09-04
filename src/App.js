@@ -3,11 +3,9 @@ import Content from "./Content";
 
 function App() {
   return (
-    <div>
-      <header className="App-header">
-        <p className="Title">FizzBuzz</p>
-        <Content />
-      </header>
+    <div className="App">
+      <h1 className="Title">FizzBuzz</h1>
+      <Content />
     </div>
   );
 }

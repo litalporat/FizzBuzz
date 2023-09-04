@@ -2,42 +2,40 @@ import React, { useState } from "react";
 import "./App.css";
 
 export default function Content() {
-  const [fizzDiv, setFizzDiv] = useState(3);
-  const [buzzDiv, setBuzzDiv] = useState(5);
+  const [fizzDivider, setFizzDivider] = useState(3);
+  const [buzzDivider, setBuzzDivider] = useState(5);
   const [numbers, setNumbers] = useState([]);
 
-  const handleNumber = (e) => {
-    const arr = Array.from({ length: e.target.value }, (_, i) => i + 1);
-    setNumbers(arr);
+  const handleNumber = (event) => {
+    setNumbers(Array.from({ length: event.target.value }, (_, i) => i + 1));
   };
 
-  const handleDividers = (e) => {
-    if (e.target.id === "FizzDiv") {
-      setFizzDiv(e.target.value);
+  const handleDividers = (event) => {
+    if (event.target.name === "fizz") {
+      setFizzDivider(event.target.value);
     } else {
-      setBuzzDiv(e.target.value);
+      setBuzzDivider(event.target.value);
     }
   };
 
   return (
     <div className="Container">
-      <div className="Input-form">
+      <div className="InputForm">
         <p>Fizz divider:</p>
-        <input id="FizzDiv" value={fizzDiv} onChange={handleDividers} />
+        <input name="fizz" value={fizzDivider} onChange={handleDividers} />
         <p>Buzz divider:</p>
-        <input id="BuzzDiv" value={buzzDiv} onChange={handleDividers} />
+        <input name="buzz" value={buzzDivider} onChange={handleDividers} />
         <p>Number:</p>
-        <input id="Number" onChange={handleNumber} />
+        <input onChange={handleNumber} />
       </div>
-      <div className="Scroll-bg">
-        <div className="Scroll-div">
-          {numbers &&
-            numbers.map((num) => (
-              <p key={num}>
-                {num}: {num % fizzDiv === 0 ? "Fizz" : ""}
-                {num % buzzDiv === 0 ? "Buzz" : ""}
-              </p>
-            ))}
+      <div className="ScrollBackground">
+        <div className="NumberList">
+          {numbers.map((num) => (
+            <p key={num}>
+              {num}: {num % fizzDivider === 0 ? "Fizz" : ""}
+              {num % buzzDivider === 0 ? "Buzz" : ""}
+            </p>
+          ))}
         </div>
       </div>
     </div>

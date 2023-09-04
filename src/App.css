@@ -1,4 +1,4 @@
-.App-header {
+.App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,17 +17,16 @@
 }
 
 .Container {
-  /* background-color: aqua; */
   height: 60vh;
-  width: 70%;
-  align-self: center;
-  display: grid;
-  grid-template-columns: 40% 60%;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 20px 100px;
 }
 
-.Input-form {
-  padding: 30px 30px;
+.InputForm {
+  padding: 30px;
   display: grid;
   grid-template-columns: 40% 60%;
   gap: 10px 30px;
@@ -38,27 +37,25 @@ input {
   height: 30px;
   width: 60px;
   display: block;
-  border-radius: 20%;
+  border-radius: 11px;
   margin-top: 15px;
   text-align: center;
 }
 
-.Scroll-bg {
+.ScrollBackground {
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 20%;
+  border-radius: 11px;
   margin-top: -20px;
   margin-bottom: 20px;
   padding: 30px;
   height: 350px;
-  width: 90%;
+  width: 35%;
 }
 
-.Scroll-div {
+.NumberList {
   height: 350px;
-  width: 90%;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   overflow-y: scroll;
-  align-self: center;
-  justify-self: center;
-  text-align: center;
+  padding-left: 40%;
 }
